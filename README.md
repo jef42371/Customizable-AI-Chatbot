@@ -1,4 +1,4 @@
-# Customizable AI Chatbot - Build Your Own Conversational AI in Minutes
+# Customizable AI Chatbot - Build Your Own Conversational AI in Minutes ⏰
 
 ![Next.js Shield](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
 ![Tailwind CSS Shield](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
@@ -344,3 +344,5 @@ By using or contributing to this project, you agree to abide by the terms of the
 ---
 
 Happy coding! 🚀 Thank you for using and contributing to this project.
+
+[⬆️ Back to Top](#customizable-ai-chatbot---build-your-own-conversational-ai-in-minutes-)
