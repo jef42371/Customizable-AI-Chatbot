@@ -46,6 +46,8 @@ This project is a **Customizable AI Chatbot** that allows you to easily modify a
 
 The solution is built on **Next.js** for a robust React-based frontend, styled with **Tailwind CSS** for responsive design, and enriched with animations from **Framer Motion**. It integrates powerful AI engines such as **OpenAI**, **Fireworks AI**, and **Anthropic AI** to handle diverse conversational tasks.
 
+**Demo Chatbot: [https://customizable-ai-chatbot.vercel.app](https://customizable-ai-chatbot.vercel.app)**.
+
 ### User Interface
 
 The chatbot interface is designed to be modern and user-friendly, with a clean layout and smooth animations. Users can interact with the chatbot by typing messages and receiving responses in real time. The chatbot's identity and appearance can be customized to match your preferences.
@@ -72,6 +74,9 @@ A very high-level overview of the architecture is shown below:
 - **Easy Customization:** Modify chatbot appearance and behavior through configuration files.
 - **Rapid Deployment:** Seamless integration with Vercel for fast hosting.
 - **Extensible:** Additional similar technologies can be integrated as needed (shield icons above showcase major integrations).
+- **Local Storage:** Persists chat history and settings across sessions, even after page refresh or reload!
+- **Responsive Design:** Works on desktop, tablet, and mobile devices.
+- **Clear Chat History:** Option to clear chat history and start fresh.
 
 ---
 
