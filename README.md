@@ -2,6 +2,7 @@
 
 ![Next.js Shield](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
 ![Tailwind CSS Shield](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![Shadcn UI Shield](https://img.shields.io/badge/Shadcn_UI-darkyellow?logo=nextui&logoColor=white)
 ![Pinecone Shield](https://img.shields.io/badge/Pinecone-000?logo=databricks&logoColor=white)
 ![OpenAI Shield](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)
 ![Fireworks AI Shield](https://img.shields.io/badge/Fireworks_AI-green?logo=openaigym&logoColor=white)
@@ -50,7 +51,7 @@ The solution is built on **Next.js** for a robust React-based frontend, styled w
 
 ### User Interface
 
-The chatbot interface is designed to be modern and user-friendly, with a clean layout and smooth animations. Users can interact with the chatbot by typing messages and receiving responses in real time. The chatbot's identity and appearance can be customized to match your preferences.
+The chatbot interface is designed to be modern and user-friendly, with a clean layout and smooth animations. Users can interact with the chatbot by typing messages and receiving responses in real time. The chatbot's identity and appearance can be fully customized to match your preferences.
 
 <p align="center">
   <img src="img/ai.png" alt="AI Chatbot Interface" width="100%">
