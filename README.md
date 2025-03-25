@@ -39,6 +39,8 @@ A fully customizable AI chatbot built with modern web technologies. This project
 - [License](#license)
 - [Additional Resources](#additional-resources)
 
+For quickstart, you can ignore the detailed instructions and jump straight to the [Getting Started](#getting-started), [Deployment Instructions](#deployment-instructions), [Pinecone & RAG Setup](#pinecone--rag-setup), and [Customization](#customization) sections.
+
 ---
 
 ## Introduction
@@ -310,6 +312,8 @@ Contributions to enhance this project are welcome. To contribute:
 ---
 
 ## Author
+
+If you have any questions or feedback, feel free to reach out to me at:
 
 - **Son (David) Nguyen** – [GitHub](https://github.com/hoangsonww/)
 - **Website:** [Personal Website](https://sonnguyenhoang.com/)
