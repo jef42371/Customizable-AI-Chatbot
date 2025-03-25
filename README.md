@@ -72,8 +72,11 @@ A very high-level overview of the architecture is shown below:
 ## Features
 
 - **Dynamic Chat Interface:** Modern, responsive UI with smooth animations.
+  - **Enhanced with Streaming:** The app spits out chatbot responses as they are generated, providing a more interactive experience.
 - **Advanced AI Integration:** Connects to multiple AI APIs (OpenAI, Fireworks AI, Anthropic AI) to generate rich, context-aware responses.
 - **RAG & Pinecone:** Upserts document vectors into a Pinecone index for accurate retrieval and augmented generation.
+  - **RAG Loader:** Comes with a tool to upload documents to Pinecone for RAG, ensuring even beginners can set up the RAG system.
+  - **Source Citation:** Displays the source of the document for full transparency.
 - **Easy Customization:** Modify chatbot appearance and behavior through configuration files.
 - **Rapid Deployment:** Seamless integration with Vercel for fast hosting.
 - **Extensible:** Additional similar technologies can be integrated as needed (shield icons above showcase major integrations).
@@ -188,6 +191,7 @@ Replace the placeholder values with your actual API keys.
 2. **RAG Setup:**
 
 - Go to [RAG by Ringel](https://rag.ringel.ai/).
+  - _**Credits**: Dr. Ringel at UNC-Chapel Hill for providing this tool._
 - Create an account and start a **new project**.
 - Add your **Pinecone API key** in the project settings.
 - When prompted, enter the **Pinecone index name exactly as you created it in Pinecone**.
