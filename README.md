@@ -1,18 +1,26 @@
 # Customizable AI Chatbot - Build Your Own Conversational AI in Minutes ⏰
 
 ![Next.js Shield](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
+![React Shield](https://img.shields.io/badge/React-0D1117?logo=react&logoColor=white&labelColor=0D1117)
 ![Tailwind CSS Shield](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
 ![Shadcn UI Shield](https://img.shields.io/badge/Shadcn_UI-darkyellow?logo=nextui&logoColor=white)
+![Framer Motion Shield](https://img.shields.io/badge/Framer_Motion-000?logo=framer&logoColor=white)
+![TypeScript Shield](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
+![Node.js Shield](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![Pinecone Shield](https://img.shields.io/badge/Pinecone-000?logo=databricks&logoColor=white)
 ![OpenAI Shield](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)
 ![Fireworks AI Shield](https://img.shields.io/badge/Fireworks_AI-green?logo=openaigym&logoColor=white)
-![Anthropic AI Shield](https://img.shields.io/badge/Anthropic_AI-blue?logo=anthropic)
-![RAG Shield](https://img.shields.io/badge/RAG-orange?logo=probot&logoColor=white)
 ![Vercel Shield](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=white)
+![RAG Shield](https://img.shields.io/badge/RAG-orange?logo=probot&logoColor=white)
+![Figma Shield](https://img.shields.io/badge/Figma-000?logo=figma&logoColor=white)
 
 A fully customizable AI chatbot built with modern web technologies. This project is designed to let you tailor every aspect of your chatbot, from its appearance and messaging to the underlying AI integrations. With support for advanced technologies such as Next.js, Tailwind CSS, RAG (Retrieval-Augmented Generation), Pinecone, and multiple AI APIs (OpenAI, Fireworks AI, Anthropic AI), this solution makes deploying your own conversational AI a breeze.
 
 **Are you ready to build your own AI chatbot in minutes? Let's get started!** 🚀
+
+<p align="center">
+  <img src="img/banner.png" alt="Customizable AI Chatbot Banner" width="100%" style="border-radius: 8px">
+</p>
 
 ---
 
@@ -49,14 +57,14 @@ This project is a **Customizable AI Chatbot** that allows you to easily modify a
 
 The solution is built on **Next.js** for a robust React-based frontend, styled with **Tailwind CSS** for responsive design, and enriched with animations from **Framer Motion**. It integrates powerful AI engines such as **OpenAI**, **Fireworks AI**, and **Anthropic AI** to handle diverse conversational tasks.
 
-**Demo Chatbot: [https://customizable-ai-chatbot.vercel.app](https://customizable-ai-chatbot.vercel.app)**.
+**Demo Chatbot: [https://customizable-ai-chatbot.vercel.app](https://customizable-ai-chatbot.vercel.app)** 🌐.
 
 ### User Interface
 
 The chatbot interface is designed to be modern and user-friendly, with a clean layout and smooth animations. Users can interact with the chatbot by typing messages and receiving responses in real time. The chatbot's identity and appearance can be fully customized to match your preferences.
 
 <p align="center">
-  <img src="img/ai.png" alt="AI Chatbot Interface" width="100%">
+  <img src="img/ai.png" alt="AI Chatbot Interface" width="100%" style="border-radius: 8px">
 </p>
 
 ### Architecture Overview
@@ -64,8 +72,10 @@ The chatbot interface is designed to be modern and user-friendly, with a clean l
 A very high-level overview of the architecture is shown below:
 
 <p align="center">
-  <img src="img/architecture.JPG" alt="AI Chatbot Architecture" width="100%">
+  <img src="img/architecture.JPG" alt="AI Chatbot Architecture" width="100%" style="border-radius: 8px">
 </p>
+
+Feel free to use this customizable AI chatbot for your own projects. Some use cases include personal assistants, FAQ bots, research assistants, and more. The possibilities are endless! 🚀
 
 ---
 
@@ -202,6 +212,7 @@ Replace the placeholder values with your actual API keys.
 
 - Convert your documents to **Markdown** or **TXT** format if necessary.
 - Use the [RAG by Ringel](https://rag.ringel.ai/) interface to upload your documents to Pinecone. This will create document vectors for retrieval.
+  - Credits to Dr. Ringel at UNC-Chapel Hill for providing this tool!
 - The documents should be any relevant text data that you want the chatbot to reference during interactions.
 - An example document could be a list of FAQs or a collection of articles about you, so that the chatbot can provide accurate responses about you.
 - RAG will use these documents to upsert Pinecone vectors, ensuring accurate retrieval during chat interactions.
