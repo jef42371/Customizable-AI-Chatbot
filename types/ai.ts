@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { z } from "zod";
 import Anthropic from "@anthropic-ai/sdk";
 
+// Schema Validation
 export const coreMessageSchema = z.object({
   role: z.enum(["user", "assistant", "system"]),
   content: z.string(),

@@ -97,6 +97,12 @@ export function preprocessLaTeX(content: string): string {
   return content;
 }
 
+/**
+ * Escapes brackets in the given text to prevent them from being interpreted as LaTeX.
+ *
+ * @param text The input string containing LaTeX expressions.
+ * @returns The processed string with escaped brackets.
+ */
 export function escapeBrackets(text: string): string {
   const pattern =
     /(```[\S\s]*?```|`.*?`)|\\\[([\S\s]*?[^\\])\\]|\\\((.*?)\\\)/g;
@@ -120,10 +126,23 @@ export function escapeBrackets(text: string): string {
   );
 }
 
+/**
+ * Escapes mhchem commands in the given text to prevent them from being interpreted as LaTeX.
+ *
+ * @param text The input string containing LaTeX expressions.
+ * @returns The processed string with escaped mhchem commands.
+ */
 export function escapeMhchem(text: string) {
   return text.replaceAll("$\\ce{", "$\\\\ce{").replaceAll("$\\pu{", "$\\\\pu{");
 }
 
+/**
+ * Renders citations in the text by replacing citation markers with CitationCircle components.
+ *
+ * @param children The content to process, which can be a string or React node.
+ * @param citations An array of Citation objects to be used for rendering.
+ * @returns A React node with citations rendered as CitationCircle components.
+ */
 export function renderCitations(
   children: React.ReactNode | string,
   citations: Citation[],

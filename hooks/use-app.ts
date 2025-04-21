@@ -17,6 +17,12 @@ import {
   streamedErrorSchema,
 } from "@/types";
 
+/**
+ * Custom hook to manage the state of the chat application. This
+ * hook handles the messages, loading state, word count, and
+ * input state. It also provides functions to add messages, fetch
+ * responses, and handle streaming responses.
+ */
 export default function useApp() {
   const initialAssistantMessage: DisplayMessage = {
     role: "assistant",
@@ -41,6 +47,11 @@ export default function useApp() {
     );
   }, [messages]);
 
+  /**
+   * Adds a user message to the messages array and updates the state.
+   *
+   * @param input - The user input message to be added.
+   */
   const addUserMessage = (input: string) => {
     const newUserMessage: DisplayMessage = {
       role: "user",
@@ -51,6 +62,12 @@ export default function useApp() {
     return newUserMessage;
   };
 
+  /**
+   * Adds an assistant message to the messages array and updates the state.
+   *
+   * @param content - The content of the assistant message.
+   * @param citations - The citations associated with the assistant message.
+   */
   const addAssistantMessage = (content: string, citations: Citation[]) => {
     const newAssistantMessage: DisplayMessage = {
       role: "assistant",
@@ -61,6 +78,11 @@ export default function useApp() {
     return newAssistantMessage;
   };
 
+  /**
+   * Fetches the assistant's response from the server.
+   *
+   * @param allMessages - The array of all messages to be sent to the server.
+   */
   const fetchAssistantResponse = async (allMessages: DisplayMessage[]) => {
     const response = await fetch("/api/chat", {
       method: "POST",
@@ -77,6 +99,12 @@ export default function useApp() {
     return response;
   };
 
+  /**
+   * Handles streamed messages from the server. It updates the state
+   * with the new message content and citations.
+   *
+   * @param streamedMessage - The streamed message received from the server.
+   */
   const handleStreamedMessage = (streamedMessage: StreamedMessage) => {
     setIndicatorState([]);
     setMessages((prevMessages) => {
@@ -103,6 +131,12 @@ export default function useApp() {
     });
   };
 
+  /**
+   * Handles streamed loading indicators from the server. It updates
+   * the state with the new loading indicator.
+   *
+   * @param streamedLoading - The streamed loading indicator received from the server.
+   */
   const handleStreamedLoading = (streamedLoading: StreamedLoading) => {
     setIndicatorState((prevIndicatorState) => [
       ...prevIndicatorState,
@@ -110,6 +144,12 @@ export default function useApp() {
     ]);
   };
 
+  /**
+   * Handles streamed errors from the server. It updates the state
+   * with the new error indicator.
+   *
+   * @param streamedError - The streamed error received from the server.
+   */
   const handleStreamedError = (streamedError: StreamedError) => {
     setIndicatorState((prevIndicatorState) => [
       ...prevIndicatorState,
@@ -117,8 +157,20 @@ export default function useApp() {
     ]);
   };
 
+  /**
+   * Handles streamed done messages from the server. It clears the
+   * loading indicators and updates the state with the final message.
+   *
+   * @param streamedDone - The streamed done message received from the server.
+   */
   const handleStreamedDone = (streamedDone: StreamedDone) => {};
 
+  /**
+   * Routes the streamed response to the appropriate handler based
+   * on the type of payload received.
+   *
+   * @param payload - The streamed payload received from the server.
+   */
   const routeResponseToProperHandler = (payload: string) => {
     const payloads = payload.split("\n").filter((p) => p.trim() !== "");
 
@@ -143,6 +195,12 @@ export default function useApp() {
     }
   };
 
+  /**
+   * Processes the streamed response from the server. It reads the
+   * response body and routes the payload to the appropriate handler.
+   *
+   * @param response - The streamed response received from the server.
+   */
   const processStreamedResponse = async (response: Response) => {
     const reader = response.body?.getReader();
     if (!reader) {
@@ -158,6 +216,12 @@ export default function useApp() {
     }
   };
 
+  /**
+   * Handles the form submission. It adds the user message, fetches
+   * the assistant's response, and processes the streamed response.
+   *
+   * @param e - The form event.
+   */
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIndicatorState([]);
@@ -193,6 +257,12 @@ export default function useApp() {
     }
   };
 
+  /**
+   * Handles the input change event. It updates the input state
+   * with the new value.
+   *
+   * @param e - The input change event.
+   */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
@@ -214,6 +284,9 @@ export default function useApp() {
     }
   }, [messages]);
 
+  /**
+   * Clears the messages and resets the word count.
+   */
   const clearMessages = () => {
     setMessages([]);
     setWordCount(0);

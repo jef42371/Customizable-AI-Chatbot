@@ -1,6 +1,7 @@
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 
+// This is a Terms of Use and Disclaimer page for an AI Chatbot application.
 export default function Terms() {
   return (
     <div className="w-full flex justify-center p-10">

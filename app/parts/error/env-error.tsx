@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * EnvError - Error component for displaying environment errors
+ *
+ * @param message - The error message to display
+ */
 export function EnvError({ message }: { message: string }) {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center bg-red-700">

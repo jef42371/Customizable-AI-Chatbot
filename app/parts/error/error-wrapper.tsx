@@ -4,6 +4,13 @@ type ErrorWrapperProps = {
   children: React.ReactNode;
 };
 
+/**
+ * ErrorWrapper component checks for the presence of required environment variables
+ * and displays an error message if they are not set or invalid.
+ *
+ * @param {ErrorWrapperProps} props - The component props.
+ * @returns {JSX.Element} - The rendered component.
+ */
 export function ErrorWrapper({ children }: ErrorWrapperProps) {
   const openAiKeySchema = z.string().min(51).startsWith("sk-");
   const pineconeKeySchema = z.string();

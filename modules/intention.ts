@@ -26,6 +26,9 @@ export class IntentionModule {
         content: msg.content,
       }));
 
+    /**
+     * Call the OpenAI API to detect the intention
+     */
     const response = await openai.beta.chat.completions.parse({
       model: INTENTION_MODEL,
       messages: [
@@ -35,9 +38,13 @@ export class IntentionModule {
       response_format: zodResponseFormat(intentionSchema, "intention"),
     });
 
+    /**
+     * Check if the response is valid and contains a parsed intention
+     */
     if (!response.choices[0].message.parsed) {
       return { type: "random" as IntentionType };
     }
+
     return response.choices[0].message.parsed;
   }
 }

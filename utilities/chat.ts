@@ -16,6 +16,12 @@ import {
 } from "@/types";
 import OpenAI from "openai";
 
+/**
+ * Strips citations from messages - Used to display messages without citations
+ * in case the user doesn't want to see them
+ *
+ * @param messages - Array of messages to strip citations from
+ */
 export function stripMessagesOfCitations(
   messages: DisplayMessage[],
 ): DisplayMessage[] {
@@ -25,6 +31,12 @@ export function stripMessagesOfCitations(
   }));
 }
 
+/**
+ * Converts DisplayMessage to CoreMessage - Used to convert messages
+ * to a format that can be sent to the OpenAI API
+ *
+ * @param messages - Array of messages to convert
+ */
 export function convertToCoreMessages(
   messages: DisplayMessage[],
 ): CoreMessage[] {
@@ -34,6 +46,12 @@ export function convertToCoreMessages(
   }));
 }
 
+/**
+ * Adds a system message to the beginning of the messages array
+ *
+ * @param messages - Array of messages to add system message to
+ * @param systemMessage - System message to add
+ */
 export function addSystemMessage(
   messages: CoreMessage[],
   systemMessage: string,
@@ -41,6 +59,13 @@ export function addSystemMessage(
   return [{ role: "system", content: systemMessage }, ...messages];
 }
 
+/**
+ * Embeds hypothetical data using OpenAI's embedding API - used to
+ * generate embeddings for the hypothetical data
+ *
+ * @param value - Value to embed
+ * @param openai - OpenAI object containing the API key
+ */
 export async function embedHypotheticalData(
   value: string,
   openai: OpenAI,
@@ -57,7 +82,13 @@ export async function embedHypotheticalData(
   }
 }
 
-// Hypothetical Document Embedding (HyDe)
+/**
+ * Generates hypothetical data using OpenAI's chat API - used to
+ * generate hypothetical data for the user
+ *
+ * @param chat - Chat object containing the messages
+ * @param openai - OpenAI object containing the API key
+ */
 export async function generateHypotheticalData(
   chat: Chat,
   openai: OpenAI,
@@ -88,6 +119,13 @@ export async function generateHypotheticalData(
   }
 }
 
+/**
+ * Searches for chunks using the embedding generated from the hypothetical data
+ * using Pinecone's query API - used to search for chunks in the Pinecone index
+ *
+ * @param embedding - Embedding to search for
+ * @param pineconeIndex - Pinecone index object containing the API key
+ */
 export async function searchForChunksUsingEmbedding(
   embedding: number[],
   pineconeIndex: any,
@@ -116,6 +154,11 @@ export async function searchForChunksUsingEmbedding(
   }
 }
 
+/**
+ * Aggregates sources from chunks - used to group chunks by source
+ *
+ * @param chunks - Array of chunks to aggregate
+ */
 export function aggregateSources(chunks: Chunk[]): Source[] {
   const sourceMap = new Map<string, Source>();
 
@@ -133,16 +176,32 @@ export function aggregateSources(chunks: Chunk[]): Source[] {
   return Array.from(sourceMap.values());
 }
 
+/**
+ * Sorts chunks in source by order - used to sort chunks in a source
+ *
+ * @param source - Source to sort chunks in
+ */
 export function sortChunksInSourceByOrder(source: Source): Source {
   source.chunks.sort((a, b) => a.order - b.order);
   return source;
 }
 
+/**
+ * Gets sources from chunks - used to get sources from chunks
+ *
+ * @param chunks - Array of chunks to get sources from
+ */
 export function getSourcesFromChunks(chunks: Chunk[]): Source[] {
   const sources = aggregateSources(chunks);
   return sources.map((source) => sortChunksInSourceByOrder(source));
 }
 
+/**
+ * Builds context from ordered chunks - used to build context from chunks
+ *
+ * @param chunks - Array of chunks to build context from
+ * @param citationNumber - Citation number to use in the context
+ */
 export function buildContextFromOrderedChunks(
   chunks: Chunk[],
   citationNumber: number,
@@ -165,6 +224,12 @@ export function buildContextFromOrderedChunks(
   return context.trim();
 }
 
+/**
+ * Gets context from source - used to get context from a source
+ *
+ * @param source - Source to get context from
+ * @param citationNumber - Citation number to use in the context
+ */
 export function getContextFromSource(
   source: Source,
   citationNumber: number,
@@ -179,17 +244,31 @@ export function getContextFromSource(
   `;
 }
 
+/**
+ * Gets context from sources - used to get context from sources
+ *
+ * @param sources - Array of sources to get context from
+ */
 export function getContextFromSources(sources: Source[]): string {
   return sources
     .map((source, index) => getContextFromSource(source, index + 1))
     .join("\n\n\n");
 }
 
+/**
+ * Builds prompt from context - used to build prompt from context
+ *
+ * @param context - Context to build prompt from
+ */
 export function buildPromptFromContext(context: string): string {
-  // TODO: yes, this is redundant
   return RESPOND_TO_QUESTION_SYSTEM_PROMPT(context);
 }
 
+/**
+ * Gets citations from chunks - used to get citations from chunks
+ *
+ * @param chunks - Array of chunks to get citations from
+ */
 export function getCitationsFromChunks(chunks: Chunk[]): Citation[] {
   return chunks.map((chunk) =>
     citationSchema.parse({

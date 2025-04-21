@@ -10,6 +10,7 @@
 ![Pinecone Shield](https://img.shields.io/badge/Pinecone-000?logo=databricks&logoColor=white)
 ![OpenAI Shield](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)
 ![Fireworks AI Shield](https://img.shields.io/badge/Fireworks_AI-green?logo=openaigym&logoColor=white)
+![Anthropic AI Shield](https://img.shields.io/badge/Anthropic_AI-000?logo=anthropic&logoColor=white)
 ![Vercel Shield](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=white)
 ![RAG Shield](https://img.shields.io/badge/RAG-orange?logo=probot&logoColor=white)
 ![Figma Shield](https://img.shields.io/badge/Figma-000?logo=figma&logoColor=white)
@@ -31,8 +32,9 @@ A fully customizable AI chatbot built with modern web technologies. This project
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
   - [Fork and Clone](#fork-and-clone)
-  - [Local Development Setup](#local-development-setup)
+  - [Service Accounts Setup](#service-accounts-setup)
   - [Environment Variables Setup](#environment-variables-setup)
+  - [Local Development Setup](#local-development-setup)
 - [Deployment Instructions](#deployment-instructions)
   - [Deploy on Vercel](#deploy-on-vercel)
 - [Pinecone & RAG Setup](#pinecone--rag-setup)
@@ -58,6 +60,8 @@ This project is a **Customizable AI Chatbot** that allows you to easily modify a
 The solution is built on **Next.js** for a robust React-based frontend, styled with **Tailwind CSS** for responsive design, and enriched with animations from **Framer Motion**. It integrates powerful AI engines such as **OpenAI**, **Fireworks AI**, and **Anthropic AI** to handle diverse conversational tasks.
 
 **Demo Chatbot: [https://customizable-ai-chatbot.vercel.app](https://customizable-ai-chatbot.vercel.app)** 🌐.
+
+> Note: The demo might not work when I've run out of OpenAI credits. If you notice that, please kindly notify me via email or GitHub issues and I'll try to fix it as soon as possible. Thank you for your understanding! 🙏
 
 ### User Interface
 
@@ -124,9 +128,37 @@ Each of these technologies is represented with a shield icon at the top of this 
 2. **Clone Your Fork:**  
    Open your terminal and run: (Replace `your-username` with your GitHub username)
    ```bash
-   git clone https://github.com/your-username/Customizable-AI-Chatbot.git
+   git clone https://github.com/hoangsonww/Customizable-AI-Chatbot.git
    cd Customizable-AI-Chatbot
    ```
+
+### Service Accounts Setup
+
+**IMPORTANT**: Before starting the project, you need to set up accounts with the following services to obtain API keys. This is crucial for the chatbot to function correctly:
+
+1. **OpenAI API Key:**  
+   Sign up at [OpenAI](https://openai.com/) and create an API key. Be sure that your account balance is at least $5 to avoid any issues.
+2. **Fireworks AI API Key:**  
+   Sign up at [Fireworks AI](https://www.fireworks.ai/) and create an API key.
+3. **Anthropic AI API Key:**  
+   Sign up at [Anthropic AI](https://www.anthropic.com/) and create an API key.
+4. **Pinecone API Key:**  
+   Sign up at [Pinecone](https://www.pinecone.io/) and create an API key. Make sure to create a new index in your Pinecone account.
+5. **RAG by Ringel:**  
+   Visit [RAG by Ringel](https://rag.ringel.ai/) and create an account. This tool will help you upload documents to Pinecone for RAG. Make sure to create a new project and enter your Pinecone API key and index name (exactly as you created it in Pinecone) in the project settings.
+
+### Environment Variables Setup
+
+Create a `.env` file in the root directory of your project and add the following keys:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
+FIREWORKS_API_KEY=your_fireworks_api_key
+PINECONE_API_KEY=your_pinecone_api_key
+```
+
+Replace the placeholder values with your actual API keys. Refer to the `.env.template` file for more information.
 
 ### Local Development Setup
 
@@ -150,18 +182,7 @@ Each of these technologies is represented with a shield icon at the top of this 
    ```
    Your application will be available at [http://localhost:3000](http://localhost:3000).
 
-### Environment Variables Setup
-
-Create a `.env` file in the root directory of your project and add the following keys:
-
-```env
-OPENAI_API_KEY=your_openai_api_key
-ANTHROPIC_API_KEY=your_anthropic_api_key
-FIREWORKS_API_KEY=your_fireworks_api_key
-PINECONE_API_KEY=your_pinecone_api_key
-```
-
-Replace the placeholder values with your actual API keys.
+> Note: Before running the project, ensure that you have set up the environment variables correctly in the `.env` file. The application will not work without these keys.
 
 ---
 
@@ -174,17 +195,17 @@ Replace the placeholder values with your actual API keys.
 
 2. **Connect Your Git Repository:**
 
-- Log in to Vercel and click on **New Project**.
-- Select your forked repository from your GitHub account.
-- Follow the prompts to connect your Git repository with Vercel.
+   - Log in to Vercel and click on **New Project**.
+   - Select your forked repository from your GitHub account.
+   - Follow the prompts to connect your Git repository with Vercel.
 
 3. **Configure Environment Variables:**  
    In your Vercel project settings, add the same environment variables from your `.env` file:
 
-- `OPENAI_API_KEY`
-- `ANTHROPIC_API_KEY`
-- `FIREWORKS_API_KEY`
-- `PINECONE_API_KEY`
+   - `OPENAI_API_KEY`
+   - `ANTHROPIC_API_KEY`
+   - `FIREWORKS_API_KEY`
+   - `PINECONE_API_KEY`
 
 4. **Deploy the Project:**  
    Click **Deploy**. Vercel will build and deploy your project automatically. Your chatbot will then be live on a Vercel-provided URL.
@@ -195,27 +216,27 @@ Replace the placeholder values with your actual API keys.
 
 1. **Pinecone Account & Index:**
 
-- Visit [Pinecone](https://www.pinecone.io) and create an account.
-- Once logged in, create a new index. **Make sure to remember the exact index name.**
+   - Visit [Pinecone](https://www.pinecone.io) and create an account.
+   - Once logged in, create a new index. **Make sure to remember the exact index name.**
 
 2. **RAG Setup:**
 
-- Go to [RAG by Ringel](https://rag.ringel.ai/).
-  - _**Credits**: Dr. Ringel at UNC-Chapel Hill for providing this tool._
-- Create an account and start a **new project**.
-- Add your **Pinecone API key** in the project settings.
-- When prompted, enter the **Pinecone index name exactly as you created it in Pinecone**.
-- Set the **source URL to a single space** (if there isn’t an applicable URL).
-- Leave all other settings unchanged.
+   - Go to [RAG by Ringel](https://rag.ringel.ai/).
+     - _**Credits**: Dr. Ringel at UNC-Chapel Hill for providing this tool._
+   - Create an account and start a **new project**.
+   - Add your **Pinecone API key** in the project settings.
+   - When prompted, enter the **Pinecone index name exactly as you created it in Pinecone**.
+   - Set the **source URL to a single space** (if there isn’t an applicable URL).
+   - Leave all other settings unchanged.
 
 3. **Document Preparation:**
 
-- Convert your documents to **Markdown** or **TXT** format if necessary.
-- Use the [RAG by Ringel](https://rag.ringel.ai/) interface to upload your documents to Pinecone. This will create document vectors for retrieval.
-  - Credits to Dr. Ringel at UNC-Chapel Hill for providing this tool!
-- The documents should be any relevant text data that you want the chatbot to reference during interactions.
-- An example document could be a list of FAQs or a collection of articles about you, so that the chatbot can provide accurate responses about you.
-- RAG will use these documents to upsert Pinecone vectors, ensuring accurate retrieval during chat interactions.
+   - Convert your documents to **Markdown** or **TXT** format if necessary.
+   - Use the [RAG by Ringel](https://rag.ringel.ai/) interface to upload your documents to Pinecone. This will create document vectors for retrieval.
+     - Credits to Dr. Ringel at UNC-Chapel Hill for providing this tool!
+   - The documents should be any relevant text data that you want the chatbot to reference during interactions.
+   - An example document could be a list of FAQs or a collection of articles about you, so that the chatbot can provide accurate responses about you.
+   - RAG will use these documents to upsert Pinecone vectors, ensuring accurate retrieval during chat interactions.
 
 > **Note:** Be sure that your Pinecone index and RAG project are correctly set up and linked to your chatbot. This will ensure that the chatbot can provide accurate and context-aware responses.
 
@@ -279,7 +300,7 @@ PINECONE_API_KEY=your_pinecone_api_key
 
 Replace each placeholder with the respective API key provided by the service.
 
-**That's it! You have successfully customized your AI chatbot to match your preferences. Feel free to explore additional customization options as needed.**
+_**That's it! You have successfully customized your AI chatbot to match your preferences. Feel free to explore additional customization options as needed.**_
 
 ---
 
@@ -351,6 +372,8 @@ By using or contributing to this project, you agree to abide by the terms of the
 ---
 
 ## Additional Resources
+
+For more information on the technologies and APIs used in this project, check out the following resources:
 
 - **Next.js Documentation:** [Next.js Docs](https://nextjs.org/docs)
 - **Tailwind CSS Documentation:** [Tailwind CSS Docs](https://tailwindcss.com/docs)

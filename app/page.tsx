@@ -5,6 +5,9 @@ import ChatMessages from "@/components/chat/messages";
 import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
 
+/**
+ * Chat component that renders the chat interface
+ */
 export default function Chat() {
   const {
     messages,

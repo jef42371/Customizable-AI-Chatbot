@@ -97,13 +97,13 @@ export class ResponseModule {
     });
   }
 
+  /**
+   * Respond to the user when they send a HOSTILE message
+   */
   static async respondToHostileMessage(
     chat: Chat,
     providers: AIProviders,
   ): Promise<Response> {
-    /**
-     * Respond to the user when they send a HOSTILE message
-     */
     const PROVIDER_NAME: ProviderName = HOSTILE_RESPONSE_PROVIDER;
     const MODEL_NAME: string = HOSTILE_RESPONSE_MODEL;
 
@@ -139,14 +139,14 @@ export class ResponseModule {
     });
   }
 
+  /**
+   * Respond to the user when they send a QUESTION message
+   */
   static async respondToQuestion(
     chat: Chat,
     providers: AIProviders,
     index: any,
   ): Promise<Response> {
-    /**
-     * Respond to the user when they send a QUESTION
-     */
     const PROVIDER_NAME: ProviderName = QUESTION_RESPONSE_PROVIDER;
     const MODEL_NAME: string = QUESTION_RESPONSE_MODEL;
 
