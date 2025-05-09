@@ -71,6 +71,10 @@ The chatbot interface is designed to be modern and user-friendly, with a clean l
   <img src="img/ai.png" alt="AI Chatbot Interface" width="100%" style="border-radius: 8px">
 </p>
 
+<p align="center">
+  <img src="img/ai-dark.png" alt="AI Chatbot Interface" width="100%" style="border-radius: 8px">
+</p>
+
 ### Architecture Overview
 
 A very high-level overview of the architecture is shown below:
