@@ -25,7 +25,7 @@ export default function ChatHeader({
   clearMessages: () => void;
 }) {
   return (
-    <div className="z-10 fixed top-0 w-full p-5 bg-background shadow-md dark:shadow-lg">
+    <div className="z-10 fixed top-0 w-full p-2 px-5 mb-1 bg-background shadow-md dark:shadow-lg">
       <div className="flex flex-col sm:flex-row items-center w-full">
         {/* logo & title: center on mobile, left on desktop */}
         <div className="flex-1 flex justify-center sm:justify-start items-center gap-2">

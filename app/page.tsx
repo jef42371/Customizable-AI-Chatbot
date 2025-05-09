@@ -23,7 +23,7 @@ export default function Chat() {
     <div className="w-screen">
       <ChatHeader clearMessages={clearMessages} />
       <div className="flex justify-center items-center h-screen">
-        <div className="flex flex-col max-w-screen-lg w-full h-full p-5">
+        <div className="flex flex-col w-screen h-full px-5">
           <ChatMessages messages={messages} indicatorState={indicatorState} />
         </div>
       </div>

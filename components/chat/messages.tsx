@@ -163,7 +163,7 @@ export default function ChatMessages({
         ))
       )}
       {showLoading && <Loading indicatorState={indicatorState} />}
-      <div className="h-[225px]" />
+      <div className="h-[129px]" />
     </motion.div>
   );
 }

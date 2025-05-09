@@ -31,8 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${firaCode.variable} h-full`}>
-      <body className="antialiased bg-background text-foreground h-full">
+    <html
+      lang="en"
+      className={`${inter.variable} ${firaCode.variable} h-full w-screen`}
+    >
+      <body className="antialiased bg-background text-foreground h-full w-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider>
             <ErrorWrapper>{children}</ErrorWrapper>

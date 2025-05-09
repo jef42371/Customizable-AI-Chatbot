@@ -30,8 +30,8 @@ export default function ChatInput({
 
   return (
     <>
-      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5 bg-background text-base">
-        <div className="max-w-screen-lg w-full">
+      <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 mt-0 w-screen p-5 bg-background text-base">
+        <div className="w-full">
           <Form {...form}>
             <form
               onSubmit={handleSubmit}
