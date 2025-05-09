@@ -1,11 +1,56 @@
-import { DisplayMessage } from "@/types";
+"use client";
+
+import { useState, useEffect } from "react";
+import { ClipboardIcon, CheckIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+import { DisplayMessage } from "@/types";
 import { Formatting } from "./formatting";
-import { LoadingIndicator } from "@/types";
 import Loading from "./loading";
+import { LoadingIndicator } from "@/types";
 import { AI_NAME } from "@/configuration/identity";
 
+//
+// — CopyButton ---------------------------------------------------------------
+//
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied) {
+      const t = setTimeout(() => setCopied(false), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [copied]);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+    } catch {
+      /* optional fallback */
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      aria-label="Copy message"
+      className="p-1 rounded-full hover:bg-muted/30 focus:outline-none"
+    >
+      {copied ? (
+        <CheckIcon className="w-4 h-4 text-green-500" />
+      ) : (
+        <ClipboardIcon className="w-4 h-4 text-muted-foreground" />
+      )}
+    </button>
+  );
+}
+
+//
+// — Logos & placeholders ----------------------------------------------------
+//
 function AILogo() {
   return (
     <motion.div
@@ -18,21 +63,36 @@ function AILogo() {
   );
 }
 
+function EmptyMessages() {
+  return (
+    <div className="flex flex-col flex-1 p-1 gap-3 justify-center items-center">
+      <p className="text-muted-foreground">
+        Ask a question to start the conversation
+      </p>
+    </div>
+  );
+}
+
+//
+// — User & Assistant messages w/ CopyButton -------------------------------
+//
 function UserMessage({ message }: { message: DisplayMessage }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-1 py-1 justify-end"
+      className="flex items-end justify-end gap-1 py-1"
     >
       <motion.div
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="px-3 py-1 bg-black rounded-2xl text-white max-w-[60%] shadow-sm hover:shadow-md transition-shadow duration-300"
+        className="px-3 py-1 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300
+                   bg-primary text-primary-foreground max-w-[60%]"
       >
         {message.content}
       </motion.div>
+      {/* Copy button removed for user messages */}
     </motion.div>
   );
 }
@@ -43,28 +103,27 @@ function AssistantMessage({ message }: { message: DisplayMessage }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-1 py-1 justify-start gap-[5px]"
+      className="flex items-start justify-start gap-1 py-1"
     >
-      <div className="w-9 flex items-end">{<AILogo />}</div>
+      <div className="w-9 flex items-end">
+        <AILogo />
+      </div>
       <motion.div
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="px-3 py-1 bg-gray-200 rounded-2xl text-black max-w-[60%] shadow-sm hover:shadow-md transition-shadow duration-300"
+        className="px-3 py-1 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300
+                   bg-secondary text-secondary-foreground max-w-[60%]"
       >
         <Formatting message={message} />
       </motion.div>
+      <CopyButton text={message.content} />
     </motion.div>
   );
 }
 
-function EmptyMessages() {
-  return (
-    <div className="flex flex-col flex-1 p-1 gap-3 justify-center items-center">
-      <p className="text-gray-500">Ask a question to start the conversation</p>
-    </div>
-  );
-}
-
+//
+// — ChatMessages wrapper -----------------------------------------------------
+//
 export default function ChatMessages({
   messages,
   indicatorState,
@@ -84,27 +143,27 @@ export default function ChatMessages({
       transition={{ duration: 0.5 }}
       className="flex flex-col flex-1 p-1 gap-3"
     >
-      <div className="h-[60px]"></div>
+      <div className="h-[60px]" />
       {messages.length === 0 ? (
         <EmptyMessages />
       ) : (
-        messages.map((message, index) => (
+        messages.map((m, i) => (
           <motion.div
-            key={index}
+            key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: i * 0.1 }}
           >
-            {message.role === "user" ? (
-              <UserMessage message={message} />
+            {m.role === "user" ? (
+              <UserMessage message={m} />
             ) : (
-              <AssistantMessage message={message} />
+              <AssistantMessage message={m} />
             )}
           </motion.div>
         ))
       )}
       {showLoading && <Loading indicatorState={indicatorState} />}
-      <div className="h-[225px]"></div>
+      <div className="h-[225px]" />
     </motion.div>
   );
 }

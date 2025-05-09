@@ -226,6 +226,7 @@ Replace the placeholder values with your actual API keys. Refer to the `.env.tem
    - Create an account and start a **new project**.
    - Add your **Pinecone API key** in the project settings.
    - When prompted, enter the **Pinecone index name exactly as you created it in Pinecone**.
+     - Note: The index name should be `my-ai` by default, but you can change it to whatever you prefer. Just make sure to change it in `configurations/pinecone.ts` as well.
    - Set the **source URL to a single space** (if there isn’t an applicable URL).
    - Leave all other settings unchanged.
 
@@ -300,7 +301,15 @@ PINECONE_API_KEY=your_pinecone_api_key
 
 Replace each placeholder with the respective API key provided by the service.
 
-_**That's it! You have successfully customized your AI chatbot to match your preferences. Feel free to explore additional customization options as needed.**_
+### Chatbot Avatar Customization
+
+This is optional, but you can customize the chatbot's avatar by replacing the image file in the `public` directory. The default avatar is located at `public/ai-logo.png`. You can replace it with your own image file, ensuring that the new file has the same name and format.
+
+Additionally, you can customize the web app's favicon by replacing the file at `app/favicon.ico`. This will change the icon that appears in the browser tab when users visit your chatbot.
+
+> Note: The recommended image size for the avatar is 512x512 pixels, and the recommended size for the favicon is 32x32 pixels. An image with a transparent background is preferred for both.
+
+_**That's it! You have now successfully customized your AI chatbot to match your preferences. Feel free to explore additional customization options as needed.**_
 
 ---
 
@@ -357,6 +366,8 @@ If you have any questions or feedback, feel free to reach out to me at:
 - **Personal Blog:** [David's Blog](https://devverse.vercel.app/)
 - **Personal AI Assistant:** [Lumina AI](https://lumina-david.vercel.app/)
 - **Email:** [Email](mailto:hoangson091104@gmail.com)
+
+Additionally, this chatbot was inspired by Dr. Ringel's work and chatbot at UNC-Chapel Hill. You can find more about his work at [Dr. Ringel's Website](https://www.ringel.ai/).
 
 ---
 

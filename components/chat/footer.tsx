@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ChatFooter() {
   return (
-    <div className="w-full text-xs flex flex-wrap pt-2 text-gray-500">
+    <div className="w-full text-xs flex flex-wrap pt-2 text-foreground">
       {/* Left Pane */}
       <div className="w-full sm:flex-1 text-center sm:text-left mb-1 sm:mb-0">
         <Link href="/terms" className="hover:underline">
@@ -12,9 +12,9 @@ export default function ChatFooter() {
       </div>
 
       {/* Center Pane */}
-      <div className="w-full sm:flex-1 text-center mb-1 sm:mb-0">
-        {FOOTER_MESSAGE}
-      </div>
+      {/*<div className="w-full sm:flex-1 text-center mb-1 sm:mb-0">*/}
+      {/*  {FOOTER_MESSAGE}*/}
+      {/*</div>*/}
 
       {/* Right Pane */}
       <div className="w-full sm:flex-1 text-center sm:text-right">
