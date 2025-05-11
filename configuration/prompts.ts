@@ -7,6 +7,18 @@ import {
 } from "@/configuration/identity";
 import { Chat, intentionTypeSchema } from "@/types";
 
+/**
+ * This file allows users to configure the chat functionality of the AI.
+ * It includes settings for the initial message, default response message,
+ * word cutoff limit, word break message, and history context length.
+ *
+ * @file configuration/prompts.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 const IDENTITY_STATEMENT = `You are an AI assistant named ${AI_NAME}.`;
 const OWNER_STATEMENT = `You are owned and created by ${OWNER_NAME}.`;
 
