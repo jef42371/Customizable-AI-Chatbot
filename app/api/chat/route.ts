@@ -6,6 +6,20 @@ import { ResponseModule } from "@/modules/response";
 import { PINECONE_INDEX_NAME } from "@/configuration/pinecone";
 import Anthropic from "@anthropic-ai/sdk";
 
+/**
+ * This file contains the main API route for handling chat interactions.
+ * It processes incoming chat messages, determines the user's intention,
+ * and generates appropriate responses using various AI providers.
+ * It also handles embedding and searching for relevant information
+ * from the Pinecone index.
+ *
+ * @file app/api/chat/route.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 // Configurations
 export const maxDuration = 60;
 
@@ -46,6 +60,11 @@ const providers: AIProviders = {
   fireworks: fireworksClient,
 };
 
+/**
+ * Determine the intention of the user based on the most recent messages
+ *
+ * @param chat - The chat object containing the user's messages
+ */
 async function determineIntention(chat: Chat): Promise<Intention> {
   return await IntentionModule.detectIntention({
     chat: chat,
@@ -53,6 +72,12 @@ async function determineIntention(chat: Chat): Promise<Intention> {
   });
 }
 
+/**
+ * Main API route for handling chat interactions
+ *
+ * @param req - The incoming request object
+ * @returns A response based on the user's intention
+ */
 export async function POST(req: Request) {
   const { chat } = await req.json();
 

@@ -12,6 +12,24 @@ import {
 } from "@/types";
 import Anthropic from "@anthropic-ai/sdk";
 
+/**
+ * This file contains functions for handling streaming responses
+ * from various AI providers. It includes functions for processing
+ * OpenAI and Anthropic streams, as well as functions for
+ * queuing loading indicators, errors, and final messages.
+ * It also includes types and interfaces for the parameters used
+ * in these functions.
+ *
+ * @file actions/streaming.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * This interface defines the parameters for the queueAssistantResponse function.
+ */
 export interface QueueAssistantResponseParams {
   controller: ReadableStreamDefaultController;
   providers: AIProviders;
@@ -24,6 +42,22 @@ export interface QueueAssistantResponseParams {
   temperature: number;
 }
 
+/**
+ * This function handles streaming responses from OpenAI and Fireworks.
+ * It takes a controller, providers, provider name, messages,
+ * model name, system prompt, citations, and temperature as parameters.
+ * It streams the response from the AI provider and enqueues
+ * the streamed messages to the controller.
+ *
+ * @param controller - A ReadableStreamDefaultController to control the stream
+ * @param providers - An object containing AI providers (OpenAI, Anthropic, Fireworks)
+ * @param providerName - The name of the provider to use (OpenAI, Anthropic, Fireworks)
+ * @param messages - An array of messages to send to the AI provider
+ * @param model_name - The name of the model to use for the AI provider
+ * @param systemPrompt - The system prompt to use for the AI provider
+ * @param citations - An array of citations to include in the response
+ * @param temperature - The temperature to use for the AI provider
+ */
 export async function handleOpenAIStream({
   controller,
   providers,
@@ -90,6 +124,21 @@ export async function handleOpenAIStream({
   controller.close();
 }
 
+/**
+ * This function handles streaming responses from Anthropic.
+ * It takes a controller, providers, messages, model name,
+ * system prompt, citations, and temperature as parameters.
+ * It streams the response from the Anthropic AI provider
+ * and enqueues the streamed messages to the controller.
+ *
+ * @param controller - A ReadableStreamDefaultController to control the stream
+ * @param providers - An object containing AI providers (OpenAI, Anthropic, Fireworks)
+ * @param messages - An array of messages to send to the AI provider
+ * @param model_name - The name of the model to use for the AI provider
+ * @param systemPrompt - The system prompt to use for the AI provider
+ * @param citations - An array of citations to include in the response
+ * @param temperature - The temperature to use for the AI provider
+ */
 export async function handleAnthropicStream({
   controller,
   providers,
@@ -147,6 +196,22 @@ export async function handleAnthropicStream({
     });
 }
 
+/**
+ * This function queues the assistant response based on the provider name.
+ * It takes a controller, providers, provider name, messages,
+ * model name, system prompt, citations, and temperature as parameters.
+ * It calls the appropriate function to handle the streaming response
+ * based on the provider name (OpenAI or Anthropic).
+ *
+ * @param controller - A ReadableStreamDefaultController to control the stream
+ * @param providers - An object containing AI providers (OpenAI, Anthropic, Fireworks)
+ * @param providerName - The name of the provider to use (OpenAI, Anthropic, Fireworks)
+ * @param messages - An array of messages to send to the AI provider
+ * @param model_name - The name of the model to use for the AI provider
+ * @param systemPrompt - The system prompt to use for the AI provider
+ * @param citations - An array of citations to include in the response
+ * @param temperature - The temperature to use for the AI provider
+ */
 export async function queueAssistantResponse({
   controller,
   providers,
@@ -186,12 +251,24 @@ export async function queueAssistantResponse({
   }
 }
 
+/**
+ * This interface defines the parameters for the queueIndicator function.
+ */
 export interface QueueLoadingParams {
   controller: ReadableStreamDefaultController;
   status: string;
   icon: IndicatorIconType;
 }
 
+/**
+ * This function queues a loading indicator message.
+ * It takes a controller, status, and icon as parameters.
+ * It creates a loading payload and enqueues it to the controller.
+ *
+ * @param controller - A ReadableStreamDefaultController to control the stream
+ * @param status - The status message to display
+ * @param icon - The icon type to display
+ */
 export async function queueIndicator({
   controller,
   status,
@@ -209,11 +286,22 @@ export async function queueIndicator({
   );
 }
 
+/**
+ * This interface defines the parameters for the queueError function.
+ */
 export interface QueueErrorParams {
   controller: ReadableStreamDefaultController;
   error_message: string;
 }
 
+/**
+ * This function queues an error message.
+ * It takes a controller and error message as parameters.
+ * It creates an error payload and enqueues it to the controller.
+ *
+ * @param controller - A ReadableStreamDefaultController to control the stream
+ * @param error_message - The error message to display
+ */
 export async function queueError({
   controller,
   error_message,
