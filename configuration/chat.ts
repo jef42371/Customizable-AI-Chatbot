@@ -1,5 +1,17 @@
 import { OWNER_NAME, AI_NAME } from "./identity";
 
+/**
+ * This file allows users to configure the chat functionality of the AI.
+ * It includes settings for the initial message, default response message,
+ * word cutoff limit, word break message, and history context length.
+ *
+ * @file configuration/chat.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 export const INITIAL_MESSAGE: string = `Hello, I'm ${AI_NAME}, ${OWNER_NAME}'s AI assistant.`;
 export const DEFAULT_RESPONSE_MESSAGE: string = `Sorry, I'm having trouble generating a response. Please try again later.`;
 export const WORD_CUTOFF: number = 12000; // Number of words until bot says it needs a break
