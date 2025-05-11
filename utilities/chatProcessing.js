@@ -1,3 +1,5 @@
+import { chunkSchema } from "@/types";
+
 /**
  * This file contains utility functions for processing and handling chat data.
  * It includes functions for handling message formatting,
@@ -10,8 +12,6 @@
  * @version 1.0.0
  * @date 2025-05-11
  */
-
-import { chunkSchema } from "@/types";
 
 /**
  * Formats a message to match the expected response structure
