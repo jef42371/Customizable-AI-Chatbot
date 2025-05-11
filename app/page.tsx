@@ -6,6 +6,19 @@ import useApp from "@/hooks/use-app";
 import ChatHeader from "@/components/chat/header";
 
 /**
+ * This file contains the main chat component that renders the chat
+ * interface. It includes the chat header, messages, and input
+ * components. It also handles the state and functionality of the chat
+ * application.
+ *
+ * @file app/page.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * Chat component that renders the chat interface
  */
 export default function Chat() {

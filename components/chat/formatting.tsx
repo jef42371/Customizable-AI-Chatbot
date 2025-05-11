@@ -7,6 +7,26 @@ import "katex/dist/katex.min.css";
 import { preprocessLaTeX, renderCitations } from "@/utilities/formatting";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
+/**
+ * This file contains the Formatting component, which is responsible for
+ * rendering the chat messages with proper formatting. It uses ReactMarkdown
+ * to parse the message content and apply syntax highlighting for code blocks.
+ * It also handles LaTeX formatting and citation rendering.
+ *
+ * @file components/chat/formatting.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * Formatting component that renders the chat messages with proper formatting.
+ * It uses ReactMarkdown to parse the message content and apply syntax highlighting
+ * for code blocks. It also handles LaTeX formatting and citation rendering.
+ *
+ * @param message - The message object containing the content and citations.
+ */
 export function Formatting({ message }: { message: DisplayMessage }) {
   const processedContent = preprocessLaTeX(message.content);
   const components = {

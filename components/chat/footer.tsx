@@ -1,6 +1,22 @@
 import { FOOTER_MESSAGE } from "@/configuration/ui";
 import Link from "next/link";
 
+/**
+ * This file defines the ChatFooter component, which is responsible for rendering
+ * the footer of the chat interface. The footer includes links to the terms of service
+ * and the developer's website. It is designed to be responsive and adjusts its layout
+ * based on the screen size.
+ *
+ * @file components/chat/footer.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * ChatFooter component that renders the footer of the chat interface
+ */
 export default function ChatFooter() {
   return (
     <div className="w-full text-xs flex flex-wrap pt-2 text-foreground">

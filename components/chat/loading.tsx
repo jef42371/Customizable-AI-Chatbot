@@ -2,6 +2,29 @@ import { LoadingIndicator, IndicatorIconType } from "@/types";
 import { motion } from "framer-motion";
 import { Brain, FileStack, FileSearch, Scan, AlertCircle } from "lucide-react";
 
+/**
+ * This file contains the Loading component which is used to display
+ * loading indicators during the chat process. It uses the framer-motion
+ * library for animations and lucide-react for icons.
+ *
+ * @file components/chat/loading.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * Loading indicator component that displays the status of the
+ * loading process. It shows different icons based on the
+ * loading state (thinking, searching, understanding,
+ * documents, error).
+ *
+ * @param status - The status message to display
+ * @param icon - The icon to display (thinking, searching, understanding,
+ * @param isError - Whether the loading process is in error state
+ * @param isDone - Whether the loading process is done
+ */
 export function Pill({
   status,
   icon,
@@ -29,6 +52,15 @@ export function Pill({
   );
 }
 
+/**
+ * Loading component that displays the loading indicators
+ * based on the current state of the application. It shows
+ * different icons and status messages based on the loading
+ * process (thinking, searching, understanding, documents,
+ * error).
+ *
+ * @param indicatorState - The current state of the loading indicators
+ */
 export default function Loading({
   indicatorState,
 }: {

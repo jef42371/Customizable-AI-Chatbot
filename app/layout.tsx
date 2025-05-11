@@ -6,6 +6,19 @@ import { ErrorWrapper } from "./parts/error/error-wrapper";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
 
+/**
+ * This file contains the root layout component for the application.
+ * It sets up the HTML structure, imports global styles,
+ * and configures fonts.
+ *
+ * @file app/layout.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+// Inter font configuration
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -13,6 +26,7 @@ const inter = Inter({
   display: "swap",
 });
 
+// Fira Code font configuration (for code blocks)
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -20,11 +34,16 @@ const firaCode = Fira_Code({
   display: "swap",
 });
 
+// Page metadata - general information about the page
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
 };
 
+/**
+ * RootLayout - The root layout component for the application.
+ * @param children - The child components to be rendered within the layout.
+ */
 export default function RootLayout({
   children,
 }: {

@@ -1,7 +1,25 @@
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 
-// This is a Terms of Use and Disclaimer page for an AI Chatbot application.
+/**
+ * This file contains the Terms of Use and Disclaimer for the AI Chatbot.
+ * It outlines the terms and conditions under which the chatbot is provided,
+ * including limitations of liability, user responsibilities,
+ * and data security.
+ *
+ * Please do NOT modify this file!
+ *
+ * @file app/terms/page.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * Terms component that displays the terms of use and disclaimer for the AI Chatbot.
+ * Please do NOT modify this file.
+ */
 export default function Terms() {
   return (
     <div className="w-full flex justify-center p-10">

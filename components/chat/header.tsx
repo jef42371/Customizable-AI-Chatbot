@@ -8,6 +8,22 @@ import { AI_NAME } from "@/configuration/identity";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
+/**
+ * This file contains the ChatHeader component which is used to display
+ * the header of the chat interface. It includes the AI logo, chat title,
+ * theme toggle button, and clear conversation button.
+ *
+ * @file components/chat/header.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * AILogo - A component that displays the AI logo with a green dot
+ * indicating the AI is ALWAYS online.
+ */
 export const AILogo = () => (
   <motion.div
     whileHover={{ scale: 1.05 }}
@@ -19,6 +35,13 @@ export const AILogo = () => (
   </motion.div>
 );
 
+/**
+ * ChatHeader - A component that displays the header of the chat
+ * interface. It includes the AI logo, chat title, theme toggle button,
+ * and clear conversation button.
+ *
+ * @param {function} clearMessages - Function to clear the chat messages.
+ */
 export default function ChatHeader({
   clearMessages,
 }: {

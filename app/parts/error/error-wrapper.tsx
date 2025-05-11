@@ -1,5 +1,19 @@
 import { z } from "zod";
 
+/**
+ * ErrorWrapper component checks for the presence of required environment variables
+ * and displays an error message if they are not set or invalid.
+ *
+ * @file app/parts/error/error-wrapper.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * ErrorWrapperProps defines the props for the ErrorWrapper component.
+ */
 type ErrorWrapperProps = {
   children: React.ReactNode;
 };

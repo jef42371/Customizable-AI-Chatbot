@@ -10,6 +10,28 @@ import {
 import Link from "next/link";
 import { EMPTY_CITATION_MESSAGE } from "@/configuration/ui";
 
+/**
+ * This file contains the CitationCircle component which is used to
+ * display a citation number in a circle. When hovered, it shows
+ * the citation source and description. This helps in
+ * providing context to the user about the source of the information
+ * being displayed - for transparency and credibility of the
+ * chatbot's responses.
+ *
+ * @file components/chat/citation.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * CitationCircle - A component that displays a citation number in a circle.
+ * When hovered, it shows the citation source and description.
+ *
+ * @param number - The citation number to display.
+ * @param citation - The citation object containing source_url and source_description.
+ */
 export function CitationCircle({
   number,
   citation,

@@ -109,6 +109,7 @@ Feel free to use this customizable AI chatbot for your own projects. Some use ca
 This project leverages an array of cutting-edge technologies:
 
 - **[Next.js](https://nextjs.org/)** – The React framework for production.
+  - This framework is used for building both the frontend UI and the backend API routes for handling requests.
 - **[Tailwind CSS](https://tailwindcss.com/)** – Utility-first CSS framework for fast UI development.
 - **[RAG (Retrieval-Augmented Generation)](https://example.com)** – Enhances responses with document context.
 - **[Pinecone](https://www.pinecone.io/)** – Vector database for managing and querying document embeddings.

@@ -8,6 +8,22 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import ChatFooter from "@/components/chat/footer";
 
+/**
+ * This file contains the ChatInput component which is used to render the
+ * input field for the chat interface. It includes a text input for
+ * the user to type their message and a submit button to send the
+ * message.
+ *
+ * @file components/chat/input.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * ChatInputProps - Props for the ChatInput component
+ */
 interface ChatInputProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -15,6 +31,16 @@ interface ChatInputProps {
   isLoading: boolean;
 }
 
+/**
+ * ChatInput - A component that displays the input field for the chat
+ * interface. It includes a text input for the user to type their message
+ * and a submit button to send the message.
+ *
+ * @param {function} handleInputChange - Function to handle input change.
+ * @param {function} handleSubmit - Function to handle form submission.
+ * @param {string} input - The current value of the input field.
+ * @param {boolean} isLoading - Indicates if the chat is loading.
+ */
 export default function ChatInput({
   handleInputChange,
   handleSubmit,

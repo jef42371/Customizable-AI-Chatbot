@@ -1,6 +1,19 @@
 "use client";
 
 /**
+ * This file contains the EnvError component, which is used to display
+ * environment errors in the application. The component is styled
+ * using Tailwind CSS and provides a user-friendly interface
+ * for error handling.
+ *
+ * @file app/parts/error/env-error.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * EnvError - Error component for displaying environment errors
  *
  * @param message - The error message to display

@@ -11,9 +11,25 @@ import Loading from "./loading";
 import { LoadingIndicator } from "@/types";
 import { AI_NAME } from "@/configuration/identity";
 
-//
-// — CopyButton ---------------------------------------------------------------
-//
+/**
+ * This file contains the ChatMessages component which is used to display
+ * the chat messages. It includes user messages, assistant messages,
+ * and a loading indicator. It also includes a copy button for the assistant's
+ * messages and an empty state when there are no messages yet.
+ *
+ * @file components/chat/messages.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
+ * CopyButton component that allows users to copy the message content
+ * to the clipboard. It shows a check icon when the message is copied.
+ *
+ * @param text - The text to be copied
+ */
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -48,9 +64,9 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-//
-// — Logos & placeholders ----------------------------------------------------
-//
+/**
+ * AILogo component that displays the AI logo.
+ */
 function AILogo() {
   return (
     <motion.div
@@ -63,6 +79,9 @@ function AILogo() {
   );
 }
 
+/**
+ * EmptyMessages component that displays a message when there are no chat messages yet.
+ */
 function EmptyMessages() {
   return (
     <div className="flex flex-col flex-1 p-1 gap-3 justify-center items-center">
@@ -73,9 +92,11 @@ function EmptyMessages() {
   );
 }
 
-//
-// — User & Assistant messages w/ CopyButton -------------------------------
-//
+/**
+ * UserMessage component that displays the user's message.
+ *
+ * @param message - The message object containing the content and role
+ */
 function UserMessage({ message }: { message: DisplayMessage }) {
   return (
     <motion.div
@@ -97,6 +118,11 @@ function UserMessage({ message }: { message: DisplayMessage }) {
   );
 }
 
+/**
+ * AssistantMessage component that displays the assistant's message.
+ *
+ * @param message - The message object containing the content and role
+ */
 function AssistantMessage({ message }: { message: DisplayMessage }) {
   return (
     <motion.div
@@ -121,9 +147,13 @@ function AssistantMessage({ message }: { message: DisplayMessage }) {
   );
 }
 
-//
-// — ChatMessages wrapper -----------------------------------------------------
-//
+/**
+ * ChatMessages component that displays the chat messages.
+ * It includes user messages, assistant messages, and a loading indicator.
+ *
+ * @param messages - The array of chat messages
+ * @param indicatorState - The current state of the loading indicators
+ */
 export default function ChatMessages({
   messages,
   indicatorState,
