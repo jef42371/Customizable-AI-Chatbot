@@ -142,4 +142,24 @@ export function prepareChunksForProcessing(chunks) {
     ...chunk,
     text: chunk.text.trim().replace(/\s+/g, " "), // Remove extra spaces
   }));
-  return sortChunks
+  return sortChunksByOrder(cleanedChunks);
+}
+
+/**
+ * Generates a response context by combining user input, citations, and system instructions.
+ *
+ * @param {string} userMessage - The user's message
+ * @param {string} systemMessage - The system's message or instruction
+ * @param {Array} citations - The list of citations to include
+ * @returns {string} - The generated context string
+ */
+export function generateResponseContext(userMessage, systemMessage, citations) {
+  let context = `System: ${systemMessage}\nUser: ${userMessage}\n\n`;
+  if (citations.length > 0) {
+    context += "Citations:\n";
+    citations.forEach((citation) => {
+      context += `[${citation.citationNumber}] ${citation.source}\n`;
+    });
+  }
+  return context;
+}
