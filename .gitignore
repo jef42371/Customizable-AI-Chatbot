@@ -1,4 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# .gitignore - Git ignore file for a Next.js project
+# This file tells Git which files and directories to ignore in the repository.
 
 # dependencies
 **/node_modules
