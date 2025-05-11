@@ -1,3 +1,9 @@
+# File: Dockerfile
+# This Dockerfile is for a Next.js application,
+# which is a React framework for building server-rendered applications.
+# It uses Node.js as the base image and installs the necessary dependencies,
+# builds the application, and sets up the container to run the app in production mode.
+
 # Use the official Node.js image
 FROM node:16-alpine
 
