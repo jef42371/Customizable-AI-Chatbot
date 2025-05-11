@@ -8,9 +8,12 @@ import {
 import { Chat, intentionTypeSchema } from "@/types";
 
 /**
- * This file allows users to configure the chat functionality of the AI.
- * It includes settings for the initial message, default response message,
- * word cutoff limit, word break message, and history context length.
+ * This file allows users to configure the system prompts for the AI.
+ * It includes settings for the intention prompt, the random response prompt,
+ * the hostile response prompt, the question response prompt,
+ * the backup question response prompt, and the Hyde prompt.
+ * This will help the AI to generate responses that are more aligned
+ * with the user's needs.
  *
  * @file configuration/prompts.ts
  * @author Son Nguyen
