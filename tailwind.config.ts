@@ -5,6 +5,7 @@ import type { Config } from "tailwindcss";
  * This file is used to configure Tailwind CSS for the Next.js application.
  * It includes custom colors, animations, and keyframes.
  *
+ * @file tailwind.config.ts
  * @author Son Nguyen
  * @license MIT
  * @version 1.0.0

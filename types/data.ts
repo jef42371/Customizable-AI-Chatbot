@@ -1,5 +1,17 @@
 import { z } from "zod";
 
+/**
+ * This file contains types and schemas for data-related functionalities.
+ * It includes schemas for uploaded documents, chunks, sources,
+ * citations, and other data structures.
+ *
+ * @file types/data.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 export const uploadedDocumentSchema = z.object({
   id: z.string(),
   title: z.string(),

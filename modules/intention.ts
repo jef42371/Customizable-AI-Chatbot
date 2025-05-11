@@ -6,6 +6,20 @@ import { INTENTION_PROMPT } from "@/configuration/prompts";
 import { INTENTION_MODEL } from "@/configuration/models";
 
 /**
+ * This file contains the IntentionModule class, which is responsible for
+ * detecting the intention of the user based on the most recent messages.
+ * It uses the OpenAI API to analyze the messages and determine
+ * the intention type. A variety of intention types are supported,
+ * and the app will respond accordingly based on the detected intention.
+ *
+ * @file modules/intention.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * IntentionModule is responsible for detecting intentions
  */
 export class IntentionModule {

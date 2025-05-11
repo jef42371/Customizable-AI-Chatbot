@@ -18,6 +18,19 @@ import {
 } from "@/types";
 
 /**
+ * This file contains custom hooks for managing the state of the chat
+ * application. It includes functions to add messages, fetch responses,
+ * handle streaming responses, and manage loading indicators.
+ * It also handles the input state and word count.
+ *
+ * @file hooks/use-app.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * Custom hook to manage the state of the chat application. This
  * hook handles the messages, loading state, word count, and
  * input state. It also provides functions to add messages, fetch

@@ -2,6 +2,19 @@ import { CitationCircle } from "@/components/chat/citation";
 import { Citation } from "@/types";
 import React from "react";
 
+/**
+ * This file contains utility functions for processing LaTeX content,
+ * escaping brackets, and rendering citations.
+ * It includes functions to preprocess LaTeX, escape brackets,
+ * escape mhchem commands, and render citations.
+ *
+ * @file utilities/formatting.tsx
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 // Regex to check if the processed content contains any potential LaTeX patterns
 const containsLatexRegex =
   /\\\(.*?\\\)|\\\[.*?\\\]|\$.*?\$|\\begin\{equation\}.*?\\end\{equation\}/;

@@ -1,6 +1,18 @@
 import { z } from "zod";
 import { citationSchema } from "./data";
 
+/**
+ * This file contains types and schemas for chat-related functionalities.
+ * It includes schemas for display messages, chat structures,
+ * loading indicators, and indicator icon types.
+ *
+ * @file types/chat.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
 export const displayMessageSchema = z.object({
   role: z.enum(["user", "assistant", "system"]),
   content: z.string(),

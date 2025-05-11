@@ -46,6 +46,18 @@ import {
 } from "@/configuration/models";
 
 /**
+ * This file contains the ResponseModule class, which is responsible for
+ * building responses to user messages. It handles different types of messages,
+ * including random, hostile, and question messages.
+ *
+ * @file modules/response.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * ResponseModule is responsible for collecting data and building a response
  */
 export class ResponseModule {

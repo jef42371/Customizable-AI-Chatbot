@@ -17,6 +17,22 @@ import {
 import OpenAI from "openai";
 
 /**
+ * This file contains utility functions for chat operations.
+ * It includes functions to strip citations from messages,
+ * convert messages to core format, add system messages,
+ * embed hypothetical data, generate hypothetical data,
+ * search for chunks using embeddings, aggregate sources,
+ * sort chunks, build context from chunks,
+ * get context from sources, and build prompts.
+ *
+ * @file utilities/chat.ts
+ * @author Son Nguyen
+ * @license MIT
+ * @version 1.0.0
+ * @date 2025-05-11
+ */
+
+/**
  * Strips citations from messages - Used to display messages without citations
  * in case the user doesn't want to see them
  *
