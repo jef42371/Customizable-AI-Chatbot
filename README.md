@@ -140,7 +140,8 @@ Each of these technologies is represented with a shield icon at the top of this 
 
 ### Service Accounts Setup
 
-**IMPORTANT**: Before starting the project, you need to set up accounts with the following services to obtain API keys. This is crucial for the chatbot to function correctly:
+> [!CAUTION]
+> **IMPORTANT**: Before starting the project, you need to set up accounts with the following services to obtain API keys. This is crucial for the chatbot to function correctly:
 
 1. **OpenAI API Key:**  
    Sign up at [OpenAI](https://openai.com/) and create an API key. Be sure that your account balance is at least $5 to avoid any issues.
@@ -233,7 +234,8 @@ Replace the placeholder values with your actual API keys. Refer to the `.env.tem
    - Create an account and start a **new project**.
    - Add your **Pinecone API key** in the project settings.
    - When prompted, enter the **Pinecone index name exactly as you created it in Pinecone**.
-     - Note: The index name should be `my-ai` by default, but you can change it to whatever you prefer. Just make sure to change it in `configurations/pinecone.ts` as well.
+> [!IMPORTANT]
+> **Note:** The index name should be `my-ai` by default, but you can change it to whatever you prefer. Just make sure to change it in `configurations/pinecone.ts` as well.
    - Set the **source URL to a single space** (if there isn’t an applicable URL).
    - Leave all other settings unchanged.
 
@@ -384,7 +386,8 @@ Additionally, this chatbot was inspired by Dr. Ringel's work and chatbot at UNC-
 
 This project is licensed under the [MIT License](LICENSE). Please review the license file for more details.
 
-**NOTE:** This project is for educational purposes only. It is not intended for commercial use or distribution. Additionally,
+> [!WARNING]
+> **NOTE:** This project is for educational purposes only. It is not intended for commercial use or distribution. Additionally,
 you must keep the footer credit intact to respect the original creator's work.
 
 By using or contributing to this project, you agree to abide by the terms of the license.
