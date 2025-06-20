@@ -61,7 +61,8 @@ The solution is built on **Next.js** for a robust React-based frontend, styled w
 
 **Demo Chatbot: [https://customizable-ai-chatbot.vercel.app](https://customizable-ai-chatbot.vercel.app)** 🌐.
 
-> Note: The demo might not work when I've run out of OpenAI credits. If you notice that, please kindly notify me via email or GitHub issues and I'll try to fix it as soon as possible. Thank you for your understanding! 🙏
+> [!NOTE]
+> The demo might not work when I've run out of OpenAI credits. If you notice that, please kindly notify me via email or GitHub issues and I'll try to fix it as soon as possible. Thank you for your understanding! 🙏
 
 ### User Interface
 
@@ -187,7 +188,8 @@ Replace the placeholder values with your actual API keys. Refer to the `.env.tem
    ```
    Your application will be available at [http://localhost:3000](http://localhost:3000).
 
-> Note: Before running the project, ensure that you have set up the environment variables correctly in the `.env` file. The application will not work without these keys.
+> [!IMPORTANT]
+> Before running the project, ensure that you have set up the environment variables correctly in the `.env` file. The application will not work without these keys.
 
 ---
 
@@ -244,7 +246,8 @@ Replace the placeholder values with your actual API keys. Refer to the `.env.tem
    - An example document could be a list of FAQs or a collection of articles about you, so that the chatbot can provide accurate responses about you.
    - RAG will use these documents to upsert Pinecone vectors, ensuring accurate retrieval during chat interactions.
 
-> **Note:** Be sure that your Pinecone index and RAG project are correctly set up and linked to your chatbot. This will ensure that the chatbot can provide accurate and context-aware responses.
+> [!IMPORTANT]
+> Be sure that your Pinecone index and RAG project are correctly set up and linked to your chatbot. This will ensure that the chatbot can provide accurate and context-aware responses.
 
 ---
 
@@ -312,7 +315,8 @@ This is optional, but you can customize the chatbot's avatar by replacing the im
 
 Additionally, you can customize the web app's favicon by replacing the file at `app/favicon.ico`. This will change the icon that appears in the browser tab when users visit your chatbot.
 
-> Note: The recommended image size for the avatar is 512x512 pixels, and the recommended size for the favicon is 32x32 pixels. An image with a transparent background is preferred for both.
+> [!TIP]
+> The recommended image size for the avatar is 512x512 pixels, and the recommended size for the favicon is 32x32 pixels. An image with a transparent background is preferred for both.
 
 _**That's it! You have now successfully customized your AI chatbot to match your preferences. Feel free to explore additional customization options as needed.**_
 
