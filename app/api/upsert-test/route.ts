@@ -6,12 +6,15 @@ export const runtime = 'edge';
 export async function GET() {
   try {
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+
     const pinecone = new Pinecone({
       apiKey: process.env.PINECONE_API_KEY!,
-      environment: process.env.PINECONE_ENVIRONMENT!,
     });
 
-    const index = pinecone.Index(process.env.PINECONE_INDEX_NAME!);
+    const index = pinecone.index(
+      process.env.PINECONE_INDEX_NAME!,
+      process.env.PINECONE_ENVIRONMENT!  // This is now the 2nd argument
+    );
 
     const testText = "This is a test memory. The best dinner is blackened salmon with green beans.";
 
@@ -37,4 +40,3 @@ export async function GET() {
     });
   }
 }
-
